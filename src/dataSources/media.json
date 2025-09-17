@@ -1,0 +1,38 @@
+[
+  {
+    "type": "video",
+    "src": "https://example.com/video-placeholder.mp4",
+    "views": 100,
+    "title": "Vinland Saga AMV: The Last Kingdom"
+  },
+  {
+    "type": "article",
+    "href": "https://example.com/article-placeholder",
+    "views": 100,
+    "title": "Хабр. Прокачиваем разработку на Vue с помощью паттернов: HOC"
+  },
+  {
+    "type": "image",
+    "src": "https://i.pinimg.com/474x/c5/70/c0/c570c08a6965d37e6f43d2934ee2258a.jpg",
+    "views": 1450,
+    "title": "Late summer jn Mount Demali"
+  },  
+  {
+    "type": "video",
+    "src": "https://example.com/video-placeholder-2.mp4",
+    "title":"Naniwa Danshi - Asimmetry",
+    "views": 1500
+  },
+  {
+    "type": "audio",
+    "src": "https://example.com/audio-placeholder.mp3",
+    "views": 150,
+    "title": "NЮ - Пофиг"
+  },
+  {
+    "type": "pdf",
+    "src": "https://example.com/pdf-placeholder.pdf",
+    "views": 450,
+    "title": "Шпаргалка по flexbox"
+  }
+]
