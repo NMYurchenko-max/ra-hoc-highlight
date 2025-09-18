@@ -4,6 +4,7 @@ import { type MediaItem } from './models/type';
 import mediaData from './dataSources/media.json';
 import './App.css';
 
+
 // Лениво загружаемые обёрнутые компоненты
 const LazyWrappedVideo = React.lazy(() =>
   import('./components/Video').then(module => ({
@@ -45,13 +46,13 @@ const App: React.FC = () => {
       </div>
       <div className="media-gallery">
         <React.Suspense fallback={<div>Загрузка...</div>}>
-          {mediaItems.map((item, index) => {
+          {mediaItems.map((item, id) => {
             switch (item.type) {
               case 'video':
                 return (
                   <LazyWrappedVideo
-                    key={index}
-                    src={item.src || ''}
+                    key={id}
+                    src={item.src}
                     views={item.views}
                     title={item.title || ''}
                   />
@@ -59,8 +60,8 @@ const App: React.FC = () => {
               case 'article':
                 return (
                   <LazyWrappedArticle
-                    key={index}
-                    href={item.href || ''}
+                    key={id}
+                    href={item.href}
                     views={item.views}
                     title={item.title || ''}
                   />
@@ -68,8 +69,8 @@ const App: React.FC = () => {
               case 'image':
                 return (
                   <LazyWrappedImage
-                    key={index}
-                    src={item.src || ''}
+                    key={id}
+                    src={item.src}
                     views={item.views}
                     title={item.title || ''}
                   />
@@ -77,8 +78,8 @@ const App: React.FC = () => {
               case 'audio':
                 return (
                   <LazyWrappedAudio
-                    key={index}
-                    src={item.src || ''}
+                    key={id}
+                    src={item.src}
                     views={item.views}
                     title={item.title || ''}
                   />
@@ -86,8 +87,8 @@ const App: React.FC = () => {
               case 'pdf':
                 return (
                   <LazyWrappedPdf
-                    key={index}
-                    src={item.src || ''}
+                    key={id}
+                    src={item.src}
                     views={item.views}
                     title={item.title || ''}
                   />
@@ -103,6 +104,7 @@ const App: React.FC = () => {
 };
 
 export default App;
+
 
 
 

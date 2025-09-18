@@ -29,8 +29,9 @@ const withMediaWrapper = <T extends { views: number }>(
 
     return (
       <div className={wrapperClass}>
+        {/* Бейджик только для New/Popular */}
         {badgeText && <span className="label">{badgeText}</span>}
-        {/* Передаём все пропсы, включая views */}
+        {/* Оборачиваем компонент */}
         {React.createElement(WrappedComponent, props)}
       </div>
     );

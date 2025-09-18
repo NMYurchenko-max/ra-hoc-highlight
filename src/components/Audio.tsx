@@ -5,21 +5,49 @@ const Audio: React.FC<{
   views: number;
   title?: string;
 }> = ({ src, views, title }) => {
+  // Проверяем, что src не пустой
+  if (!src) {
+    return (
+      <div className="item item-audio">
+        <p>Ошибка: Путь к аудио не указан</p>
+      </div>
+    );
+  }
+
+  // Проверяем, что views не пустой
+  if (views === undefined || views === null) {
+    return (
+      <div className="item item-audio">
+        <p>Ошибка: Количество прослушиваний не указано</p>
+      </div>
+    );
+  }
+
   // Проверка: является ли источник Yandex Music
   const isYandexMusic = src.includes('music.yandex.ru');
-  // Проверка: является ли источник VK Music (более гибкий поиск)
+  // Проверка: является ли источник VK Music
   const isVKMusic = src.startsWith('https://vk.com/audio');
+
+  // Используем import.meta.glob для динамического импорта локальных аудиофайлов
+  const audios = import.meta.glob<{ default: string }>(
+    '../audio/**/*.{mp3,wav,aac}',
+    { eager: true }
+  );
+  const audioPath = audios[src]?.default || src;
+
+  // Логируем путь для диагностики
+  console.log('Аудио-путь:', audioPath);
 
   return (
     <div className="item item-audio">
+      {/* Для Yandex Music используем iframe */}
       {isYandexMusic ? (
-        // Для Yandex Music используем iframe с размерами, как у видео
         <iframe
           src={src}
           style={{
             border: 'none',
             width: '100%',
-            height: '315px', // ← Высота как у видео
+            height: '315px',
           }}
           allow="clipboard-write"
           title={title || 'Yandex Music'}
@@ -36,11 +64,22 @@ const Audio: React.FC<{
         />
       ) : (
         // Для остальных аудио используем стандартный <audio>
-        <audio
-          src={src}
-          controls
-          style={{ width: '100%' }}
-        />
+        <div className="audio-wrapper">
+          <audio
+            src={audioPath}
+            controls
+            style={{ width: '100%' }}
+            onError={() => {
+              console.error(`Ошибка загрузки аудио: ${audioPath}`);
+            }}
+          >
+            Ваш браузер не поддерживает тег <code>audio</code>.
+          </audio>
+          {/* Сообщение об ошибке */}
+          {!audioPath && (
+            <p style={{ color: 'red' }}>Ошибка: Аудиофайл не найден</p>
+          )}
+        </div>
       )}
       {title && <h3>{title}</h3>}
       <p>Прослушиваний: {views}</p>
@@ -49,3 +88,4 @@ const Audio: React.FC<{
 };
 
 export default Audio;
+

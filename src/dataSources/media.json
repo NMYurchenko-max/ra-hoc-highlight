@@ -1,38 +1,65 @@
 [
   {
+    "id": 1,
     "type": "video",
-    "src": "https://example.com/video-placeholder.mp4",
-    "views": 100,
+    "src": "https://mp3clip.net/uploads/files/2022-08/1660476272_vinland-saga-amv-the-last-kingdom.mp4",
+    "views": 99,
     "title": "Vinland Saga AMV: The Last Kingdom"
   },
   {
+    "id": 2,
     "type": "article",
-    "href": "https://example.com/article-placeholder",
-    "views": 100,
+    "href": "https://habr.com/ru/articles/452248/",
+    "views": 1600,
     "title": "Хабр. Прокачиваем разработку на Vue с помощью паттернов: HOC"
   },
   {
-    "type": "image",
-    "src": "https://i.pinimg.com/474x/c5/70/c0/c570c08a6965d37e6f43d2934ee2258a.jpg",
-    "views": 1450,
-    "title": "Late summer jn Mount Demali"
-  },  
-  {
+    "id": 3,
     "type": "video",
-    "src": "https://example.com/video-placeholder-2.mp4",
-    "title":"Naniwa Danshi - Asimmetry",
-    "views": 1500
+    "src": "../video/Korolova, Julia Sanina - Higher Calling.mp4",
+    "views": 140,
+    "title": "Korolova, Julia Sanina - Higher Calling"
   },
   {
+    "id": 4,
     "type": "audio",
-    "src": "https://example.com/audio-placeholder.mp3",
-    "views": 150,
-    "title": "NЮ - Пофиг"
+    "src": "../audio/Maksim-fadeev_Skazhite-detyam.mp3",
+    "title": "Maksim Fadeev: Skazhite Detyam",
+    "views": 80
   },
   {
+    "id": 5,
+    "type": "video",
+    "src": "https://vk.com/video_ext.php?oid=-222045875&id=456239255",
+    "views": 1500,
+    "title": "Naniwa Danshi - Asimmetry"
+  },
+  {
+    "id": 6,
     "type": "pdf",
-    "src": "https://example.com/pdf-placeholder.pdf",
-    "views": 450,
-    "title": "Шпаргалка по flexbox"
+    "src": "../pdf/how-to-sell_Gpt's-agents.pdf",
+    "title": "How to Sell Gpt's Agents",
+    "views": 45000
+  },
+  {
+    "id": 7,
+    "type": "image",
+    "src": "../img/skoro-osen-Valeri.jpg",
+    "title": "Skoro Osen: Valeri",
+    "views": 101
+  },
+  {
+  "id": 8,
+  "type": "audio",
+  "src": "https://green-day.enter.audio/storage/songs/1756827186_wake-me-up-when-september-ends.mp3",
+  "title": "Green Day - Wake Me Up When September Endss",
+  "views": 4950000
+  },
+  {
+    "id": 9,
+    "type": "article",
+    "href": "https://www.shazam.com/fastforward2025",
+    "title": "Это прогнозы Shazam  - какие исполнители станут хитами в 2025",
+    "views": 10
   }
 ]
